@@ -151,4 +151,17 @@ class AVLTree {
 
         return node;
     }
+
+    // Método para imprimir a árvore em forma de lista (representação simples)
+    private void printTree(AVLNode node, String prefix, boolean isLeft) {
+        if (node != null) {
+            System.out.println(prefix + (isLeft ? "├── " : "└── ") + node.key);
+            printTree(node.left, prefix + (isLeft ? "│   " : "    "), true);
+            printTree(node.right, prefix + (isLeft ? "│   " : "    "), false);
+        }
+    }
+
+    public void printTree() {
+        printTree(root, "", false);
+    }
 }

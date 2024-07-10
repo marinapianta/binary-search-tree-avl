@@ -1,32 +1,31 @@
 public class Main {
     public static void main(String[] args) {
-        AVLTree tree = new AVLTree();
+    AVLTree tree = new AVLTree();
 
-        // Adicionando elementos
-        tree.add(10);
-        tree.add(20);
-        tree.add(30);
-        tree.add(40);
-        tree.add(50);
-        tree.add(25);
+    // Incluir os números 1, 2, 3, 4, 5, 6, 7, 8, 9
+    for (int i = 1; i <= 9; i++) {
+        tree.add(i);
+    }
 
-        // Verificando os elementos em ordem
-        System.out.println("Elementos da árvore em ordem: " + tree.inOrder());
+    // Apresentar a visualização da árvore
+    System.out.println("Árvore AVL após inserção de 1 a 9:");
+    tree.printTree();
 
-        // Verificando se contém um elemento
-        System.out.println("A árvore contém 30? " + tree.contains(30));
+    // Apresentar a altura da árvore
+    System.out.println("Altura da árvore: " + tree.height());
 
-        // Verificando a altura da árvore
-        System.out.println("Altura da árvore: " + tree.height());
+    // Limpar o conteúdo da árvore
+    tree.clear();
+    System.out.println("Árvore AVL após limpar:");
+    tree.printTree();
 
-        // Verificando o tamanho da árvore
-        System.out.println("Tamanho da árvore: " + tree.size());
+    // Incluir os números 9, 8, 7, 6, 5, 4, 3, 2, 1
+    for (int i = 9; i >= 1; i--) {
+        tree.add(i);
+    }
 
-        // Verificando se a árvore está vazia
-        System.out.println("A árvore está vazia? " + tree.isEmpty());
-
-        // Limpando a árvore
-        tree.clear();
-        System.out.println("A árvore está vazia após limpar? " + tree.isEmpty());
+    // Apresentar o conteúdo da árvore usando um caminhamento central
+    System.out.println("Elementos da árvore em ordem central após inserção de 9 a 1:");
+    System.out.println(tree.inOrder());
     }
 }
